@@ -24,11 +24,17 @@
         document.getElementById("c3Btn").innerHTML = questions[0].c[2];
         document.getElementById("c4Btn").innerHTML = questions[0].c[3];
 
+        //Set current answer to question.
+        var a = questions[0].a;
+
         // Listen for a button to be clicked to run feedback.
-        document.addEventListener("click", click);
+        document.getElementById("c1Btn").addEventListener("click", click);
+        document.getElementById("c2Btn").addEventListener("click", click);
+        document.getElementById("c3Btn").addEventListener("click", click);
+        document.getElementById("c4Btn").addEventListener("click", click);
 
         function click(event) {
-          console.log("something was clicked")
+          console.log("a button choice was clicked");
         }
 
     // Need Bottom Btn to change start a timer, change question, hid text, replace text in Text Holder
