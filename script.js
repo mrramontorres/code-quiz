@@ -1,11 +1,18 @@
-    
+    // Psuedo Code Draft
+    // Need Start Quiz button click to start a timer, change question, hid text, replace text in Text Holder
+    // Need answer to be recognized as correct or incorrect with feedback footer changed 
+    // Need score adjusted and new question and answers to follow
+    // Need either time or score to end quiz 
+
+
+
+
     // The array of questions for our quiz game.
     var questions = [
       { q: "Question 1.", a: "a" },
       { q: "Question 2.", a: "b" },
       { q: "Question 3.", a: "c" },
       { q: "Question 4.", a: "d" },
-      { q: "Question 5.", a: "e" }
     ];
 
     // We start the game with a score of 0.
