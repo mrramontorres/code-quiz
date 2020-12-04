@@ -1,5 +1,11 @@
     // Psuedo Code Draft
-    // Need Start Quiz button click to start a timer, change question, hid text, replace text in Text Holder
+    // Need quiz to start from welcome position.
+  document.getElementById("okButton")
+    .addEventListener("click", function() {
+  document.getElementById("welcome").hidden = true;
+  document.getElementById("awesome").hidden = false;
+  }, false);
+    // Need Bottom Btn to change start a timer, change question, hid text, replace text in Text Holder
     // Need answer to be recognized as correct or incorrect with feedback footer changed 
     // Need score adjusted and new question and answers to follow
     // Need either time or score to end quiz 
