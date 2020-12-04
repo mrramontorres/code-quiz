@@ -9,35 +9,31 @@
 <body>
     <div class="wrapper">
         <header>
-          <h1>Welcome to your quiz!</h1>
+          Header TBD
         </header>
 
         <div class="card">
 
-          <div class="card-header">
-            <h2>Question</h2>
-          </div>
-
             <div id="start" class="card-body">
+              <h2>Welcome to your quiz!</h2>
               <p>Try to answer the following code-related questions within the time limit. 
                 Keep in mind the incorrect answer will penalize your score/time by ten seconds!</p>
               <button id="startBtn" class="btn">Start Quiz</button>
             </div>
 
-            <div id-="questions" class="card-body">
-            <button id="answerBtn1" class="btn">Text</button><br>
-            <button id="answerBtn2" class="btn">Text</button><br>
-            <button id="answerBtn3" class="btn">Text</button><br>
-            <button id="answerBtn4" class="btn">Text</button><br>
-          </div>
+            <div id="quiz" class="card-body" hidden>
+              <h2 id="questionText">Question Text</h2>
+              <button id="answerBtn1" class="btn">Answer Choice Text</button><br>
+              <button id="answerBtn2" class="btn">Answer Choice Text</button><br>
+              <button id="answerBtn3" class="btn">Answer Choice Text</button><br>
+              <button id="answerBtn4" class="btn">Answer Choice Text</button><br>
+            </div>
 
           <br>
 
-          <div class="card-footer">
-            <div>
-              <h4 id="feedback" ></h4>Feedback to Answer</h4>
-            </div>
-            <button id="nextQBtn" class="btn">Next Question</button>
+          <div id="feedback" class="card-footer" hidden>
+              <h4>Feedback to Answer</h4>
+              <button id="nextQBtn" class="btn">Next Question</button>
           </div>
 
         </div>
