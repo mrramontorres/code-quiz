@@ -5,22 +5,21 @@
       document.getElementById("start").hidden = true;
       document.getElementById("quiz").hidden = false;
     }, false);
-    
+
+    // The array of questions for our quiz game.
+    var questions = [
+      { q: "Question 1", c: ["1","2", "3", "4"], a: "1" },
+      { q: "Question 2", c: ["1","2", "3", "4"], a: "2" },
+      { q: "Question 3", c: ["1","2", "3", "4"], a: "3" },
+      { q: "Question 4", c: ["1","2", "3", "4"], a: "4" },
+    ];
+
     // Need Bottom Btn to change start a timer, change question, hid text, replace text in Text Holder
     // Need answer to be recognized as correct or incorrect with feedback footer changed 
     // Need score adjusted and new question and answers to follow
     // Need either time or score to end quiz 
 
 /*
-
-    // The array of questions for our quiz game.
-    var questions = [
-      { q: "Question 1.", a: "1" },
-      { q: "Question 2.", a: "2" },
-      { q: "Question 3.", a: "3" },
-      { q: "Question 4.", a: "4" },
-    ];
-
     // We start the game with a score of 0.
     var score = 0;
 
