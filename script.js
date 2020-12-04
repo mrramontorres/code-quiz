@@ -27,14 +27,16 @@
         //Set current answer to question.
         var a = questions[0].a;
 
-        // Listen for a button to be clicked to run feedback.
+        //Listen for a button to be clicked to run feedback.
         document.getElementById("c1Btn").addEventListener("click", click);
         document.getElementById("c2Btn").addEventListener("click", click);
         document.getElementById("c3Btn").addEventListener("click", click);
         document.getElementById("c4Btn").addEventListener("click", click);
 
+        //Change score based on answer and provide feedback.
         function click(event) {
           console.log("a button choice was clicked");
+          document.getElementById("feedback").hidden = false;
         }
 
     // Need Bottom Btn to change start a timer, change question, hid text, replace text in Text Holder
