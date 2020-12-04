@@ -6,13 +6,23 @@
       document.getElementById("quiz").hidden = false;
     }, false);
 
+    //Starts timer when startBtn is clicked.
+
+
     // The array of questions for our quiz game.
     var questions = [
-      { q: "Question 1", c: ["1","2", "3", "4"], a: "1" },
-      { q: "Question 2", c: ["1","2", "3", "4"], a: "2" },
-      { q: "Question 3", c: ["1","2", "3", "4"], a: "3" },
-      { q: "Question 4", c: ["1","2", "3", "4"], a: "4" },
+      { q: "Question 1", c: ["1", "2", "3", "4"], a: "1" },
+      { q: "Question 2", c: ["1", "2", "3", "4"], a: "2" },
+      { q: "Question 3", c: ["1", "2", "3", "4"], a: "3" },
+      { q: "Question 4", c: ["1", "2", "3", "4"], a: "4" },
     ];
+
+        //Changes Question and Answer Text in quiz div using questions object.
+        document.getElementById("questionText").innerHTML = questions[0].q;
+        document.getElementById("c1Btn").innerHTML = questions[0].a
+        document.getElementById("c2Btn").innerHTML = questions[1].a
+        document.getElementById("c3Btn").innerHTML = questions[2].a
+        document.getElementById("c4Btn").innerHTML = questions[3].a
 
     // Need Bottom Btn to change start a timer, change question, hid text, replace text in Text Holder
     // Need answer to be recognized as correct or incorrect with feedback footer changed 
