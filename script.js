@@ -23,6 +23,8 @@
     document.getElementById("start").hidden = true;
     document.getElementById("quiz").hidden = true;
     document.getElementById("feedbackPanel").hidden = true;
+    document.getElementById("finish").hidden = false;
+    document.getElementById("score").innerHTML = "Your final score was: " + score;
   }
 
     //This function starts the timer after startBtn is pressed.
