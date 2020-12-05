@@ -14,6 +14,7 @@
 
   //Taking in information
   var initial = document.querySelector("#initials");
+  var scoreBoard = document.querySelector("#scoreboard");
 
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
@@ -98,7 +99,7 @@
 
 
 
-
+//Score record and highscore submission process.
   document.getElementById("submitBtn").addEventListener("click",function(event) {
     event.preventDefault();
   
@@ -120,7 +121,12 @@
       //set new submission
       localStorage.setItem("user", JSON.stringify(user));
 
-      //get new submission
+      //hid submission card
+      document.getElementById("finish").hidden = true;
+      document.getElementById("high").hidden = false;
 
+      //Pull from local storage and present.
+      var lastUser = JSON.parse(localStorage.getItem("user"));
+      scoreBoard.innerHTML = "something:" + lastUser.initials + "something:" + lastUser.score;
     }
   });
