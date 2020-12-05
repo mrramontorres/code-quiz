@@ -24,10 +24,14 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: rgb(77, 3, 83);
+}
+
+#timer{
+  text-align: right;
+  float: right;
 }
 
 .card {

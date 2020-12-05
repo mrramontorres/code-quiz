@@ -4,14 +4,16 @@
     { q: "Which of the following is not considered a JavaScript operator?", c: ["new","this","delete","typeof"], a: 2 },
     { q: "In JavaScript, _________ is an object of the target language data type that encloses an object of the source language.", c: ["a wrapper"," a link","a cursor","a form"], a: 1 },
     { q: "How do you create a Date object in JavaScript?", c: [" dateObjectName.new Date([parameters])","dateObjectName := new Date([parameters])","dateObjectName Date([parameters])","dateObjectName = new Date([parameters])"], a: 4 },
-  ];
+  ]
 
   //These are global variables.
   var i = 0;
   var score = 0;
+  var secondsLeft = 75;
 
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
+  document.getElementById("startBtn").addEventListener("click", setTime)
 
   //This function starts the quiz after startBtn is pressed.
   function startQuiz(){
@@ -50,11 +52,11 @@
       }
       document.getElementById("feedbackPanel").hidden = false;
       console.log("this is c:" + c);
-      if (i <= questions.length){    //After verifiying choice this calls go to i question function and starts over.
+      if (i < questions.length){ //After verifiying choice this calls go to i question function and starts over.
         goToIquestion(i);
       }
       else {
-
+        endQuiz();
       }
     }
 
@@ -64,9 +66,25 @@
     document.getElementById("c2Btn").addEventListener("click", function(){ submitAnswer(2)});
     document.getElementById("c3Btn").addEventListener("click", function(){ submitAnswer(3)});
     document.getElementById("c4Btn").addEventListener("click", function(){ submitAnswer(4)});
-  };
+  }
+
+  //This function starts the timer after startBtn is pressed.
+  function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+  
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        endQuiz();
+      }
+  
+    }, 1000);
+  }
 
   //This function ends the quiz depending on what calls it.
   function endQuiz(){
-
-  };
+    document.getElementById("start").hidden = true;
+    document.getElementById("quiz").hidden = true;
+    document.getElementById("feedbackPanel").hidden = true;
+  }
