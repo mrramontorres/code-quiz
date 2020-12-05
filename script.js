@@ -12,6 +12,9 @@
   var timeInterval;
   var secondsLeft = 10;
 
+  //Taking in information
+  var initial = document.querySelector("#initials");
+
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
   document.getElementById("startBtn").addEventListener("click", setTime)
@@ -93,3 +96,31 @@
   }
 
 
+
+
+
+  document.getElementById("submitBtn").addEventListener("click",function(event) {
+    event.preventDefault();
+  
+  
+    // create user object from submission
+    var user = {
+      initials: initial.value.trim(),
+      score: score,
+    };
+
+    console.log(user);
+
+    //validate the fields
+    if (user.initials === "") {
+      alert("error", "Cannot be blank!");
+    } else { 
+
+  
+      //set new submission
+      localStorage.setItem("user", JSON.stringify(user));
+
+      //get new submission
+
+    }
+  });
