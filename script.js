@@ -10,7 +10,7 @@
   var i = 0;
   var score = 0;
   var timeInterval;
-  var secondsLeft = 10;
+  var secondsLeft = 75;
 
   //Taking in information
   var initial = document.querySelector("#initials");
@@ -19,11 +19,12 @@
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
   document.getElementById("startBtn").addEventListener("click", setTime)
+
+  //Reset to welcome position.
   document.getElementById("backBtn").addEventListener("click", function() {location.reload();})
   document.getElementById('clearBtn').addEventListener("click", function() {
     localStorage.setItem("user", null);
     scoreBoard.innerHTML = "";
-  
   })
 
   //This function ends the quiz depending on what calls it.
@@ -70,14 +71,14 @@
     //This function checks to see if the choice selected is correct.
     function submitAnswer(c){
       if (c==a){ //If it is CORRECT adds to the global variable score, increases i, and presents in the footer.
-        score = 10 + score;
+        score = 15 + score;
         document.getElementById("result").innerHTML = "Correct!";
         i++;
         console.log("correct score now: " + score);
         console.log("submitAnswer i now: " + i);
       } else { //If it is WRONG subracts from the global variable score, increases i, and presents in the footer.
-        score = -10 + score;
-        secondsLeft = -10 + secondsLeft;
+        score = -15 + score;
+        secondsLeft = -25 + secondsLeft;
         document.getElementById("result").innerHTML = "Wrong!";
         i++;
         console.log("wrong score now: " + score);
@@ -104,7 +105,6 @@
 //Score record and highscore submission process.
   document.getElementById("submitBtn").addEventListener("click",function(event) {
     event.preventDefault();
-  
   
     // create user object from submission
     var user = {
