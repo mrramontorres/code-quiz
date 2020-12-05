@@ -11,6 +11,9 @@
   var score = 0;
   var timeInterval;
   var secondsLeft = 75;
+  document.getElementById("highs").addEventListener("click", function() {
+    alert("Life is too short to measure yourself against anyone else.")
+  });
 
   //Taking in information
   var initial = document.querySelector("#initials");
@@ -71,7 +74,7 @@
     //This function checks to see if the choice selected is correct.
     function submitAnswer(c){
       if (c==a){ //If it is CORRECT adds to the global variable score, increases i, and presents in the footer.
-        score = 15 + score;
+        score = 15 + score + secondsLeft;
         document.getElementById("result").innerHTML = "Correct!";
         i++;
         console.log("correct score now: " + score);
@@ -116,7 +119,7 @@
 
     //validate the fields
     if (user.initials === "") {
-      alert("error", "Cannot be blank!");
+      alert("Cannot be blank!");
     } else { 
 
       //set new submission
@@ -128,6 +131,6 @@
 
       //Pull from local storage and present.
       var lastUser = JSON.parse(localStorage.getItem("user"));
-      scoreBoard.innerHTML = "something:" + lastUser.initials + "something:" + lastUser.score;
+      scoreBoard.innerHTML = lastUser.initials + " scored: " + lastUser.score;
     }
   });
