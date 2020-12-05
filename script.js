@@ -9,11 +9,32 @@
   //These are global variables.
   var i = 0;
   var score = 0;
-  var secondsLeft = 75;
+  var timeInterval;
+  var secondsLeft = 60;
 
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
   document.getElementById("startBtn").addEventListener("click", setTime)
+
+
+  //This function ends the quiz depending on what calls it.
+  function endQuiz(){
+    clearInterval(timerInterval);
+    document.getElementById("start").hidden = true;
+    document.getElementById("quiz").hidden = true;
+    document.getElementById("feedbackPanel").hidden = true;
+  }
+
+    //This function starts the timer after startBtn is pressed.
+    function setTime() {
+        timerInterval = setInterval(function() {
+        secondsLeft--;
+        document.getElementById("timer").innerHTML = "Seconds Left: " + secondsLeft;
+        if(secondsLeft === 0) {
+          endQuiz();
+        }
+      }, 1000);
+    }
 
   //This function starts the quiz after startBtn is pressed.
   function startQuiz(){
@@ -45,6 +66,7 @@
         console.log("submitAnswer i now: " + i);
       } else { //If it is WRONG subracts from the global variable score, increases i, and presents in the footer.
         score = -10 + score;
+        secondsLeft = -10 + secondsLeft;
         document.getElementById("result").innerHTML = "Wrong!";
         i++;
         console.log("wrong score now: " + score);
@@ -68,23 +90,4 @@
     document.getElementById("c4Btn").addEventListener("click", function(){ submitAnswer(4)});
   }
 
-  //This function starts the timer after startBtn is pressed.
-  function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-  
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        endQuiz();
-      }
-  
-    }, 1000);
-  }
 
-  //This function ends the quiz depending on what calls it.
-  function endQuiz(){
-    document.getElementById("start").hidden = true;
-    document.getElementById("quiz").hidden = true;
-    document.getElementById("feedbackPanel").hidden = true;
-  }

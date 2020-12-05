@@ -17,6 +17,9 @@ body {
   background-color: #f9fbfd;
 }
 
+h1, p {
+  text-align: center;
+}
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -79,6 +82,9 @@ header {
   cursor: pointer;
 }
 
+#startBtn{
+  align: center;
+}
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
