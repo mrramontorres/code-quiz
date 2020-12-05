@@ -1,9 +1,9 @@
   // This sets up the information used to drive the questions, choices, and answer.
   var questions = [
-    { q: "Question 1", c: ["choice1 of q1 ", "choice2 of q1 ", "choice3 of q1 ", "choice4 of q1 "], a: 1 },
-    { q: "Question 2", c: ["choice1 of q2 ", "choice2 of q2 ", "choice3 of q2 ", "choice4 of q2 "], a: 2 },
-    { q: "Question 3", c: ["choice1 of q3 ", "choice2 of q3 ", "choice3 of q3 ", "choice4 of q3 "], a: 3 },
-    { q: "Question 4", c: ["choice1 of q4 ", "choice2 of q4 ", "choice3 of q4 ", "choice4 of q4 "], a: 4 },
+    { q: "What are variables used for in JavaScript Programs?", c: ["Storing numbers, dates, or other values", "Varying randomly", "Causing high-school algebra flashbacks", "None of the above"], a: 1 },
+    { q: "Which of the following is not considered a JavaScript operator?", c: ["new","this","delete","typeof"], a: 2 },
+    { q: "In JavaScript, _________ is an object of the target language data type that encloses an object of the source language.", c: ["a wrapper"," a link","a cursor","a form"], a: 1 },
+    { q: "How do you create a Date object in JavaScript?", c: [" dateObjectName.new Date([parameters])","dateObjectName := new Date([parameters])","dateObjectName Date([parameters])","dateObjectName = new Date([parameters])"], a: 4 },
   ];
 
   //These are global variables.
@@ -66,3 +66,7 @@
     document.getElementById("c4Btn").addEventListener("click", function(){ submitAnswer(4)});
   };
 
+  //This function ends the quiz depending on what calls it.
+  function endQuiz(){
+
+  };
