@@ -82,8 +82,8 @@ header {
   cursor: pointer;
 }
 
-#startBtn{
-  align: center;
+#clear{
+  float: right;
 }
 button[disabled] {
   cursor: default;

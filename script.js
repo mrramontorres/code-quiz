@@ -10,7 +10,7 @@
   var i = 0;
   var score = 0;
   var timeInterval;
-  var secondsLeft = 60;
+  var secondsLeft = 10;
 
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
@@ -30,12 +30,12 @@
         timerInterval = setInterval(function() {
         secondsLeft--;
         document.getElementById("timer").innerHTML = "Seconds Left: " + secondsLeft;
-        if(secondsLeft === 0) {
+        if(secondsLeft <= 0) {
           endQuiz();
         }
       }, 1000);
     }
-
+  
   //This function starts the quiz after startBtn is pressed.
   function startQuiz(){
     var a; 

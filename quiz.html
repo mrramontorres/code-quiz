@@ -32,7 +32,22 @@
               <button id="c4Btn" class="btn">Answer Choice Text</button><br>
             </div>
 
-          <br>
+            <div id="finish" class="card-body" hidden>
+              <h1>All done!</h1>
+              <h0 id="score">Score Text</h0>
+              <form method="POST">
+                  <label for="initials"><strong>Enter Initials:</strong></label>
+                  <input type="text" name="first-name" id="initials"/>
+                  <button id="submit" class="btn">Submit</button>
+              </form>
+            </div>
+
+            <div id="high" class="card-body" hidden>
+              <h1>Highscores</h1>
+              <p id="score">Score Board</p>
+              <button id="back" class="btn">Go Back</button>
+              <button id="clear" class="btn" >Clear Highscores</button>
+            </div>
 
           <div id="feedbackPanel" class="card-footer" hidden>
               <h4 id="result" >Feedback to Answer</h4>
