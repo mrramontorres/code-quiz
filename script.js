@@ -19,7 +19,12 @@
   // Start quiz from a welcome position and activate quiz.
   document.getElementById("startBtn").addEventListener("click", startQuiz)
   document.getElementById("startBtn").addEventListener("click", setTime)
-
+  document.getElementById("backBtn").addEventListener("click", function() {location.reload();})
+  document.getElementById('clearBtn').addEventListener("click", function() {
+    localStorage.setItem("user", null);
+    scoreBoard.innerHTML = "";
+  
+  })
 
   //This function ends the quiz depending on what calls it.
   function endQuiz(){
@@ -41,7 +46,7 @@
         }
       }, 1000);
     }
-  
+
   //This function starts the quiz after startBtn is pressed.
   function startQuiz(){
     var a; 
@@ -96,9 +101,6 @@
     document.getElementById("c4Btn").addEventListener("click", function(){ submitAnswer(4)});
   }
 
-
-
-
 //Score record and highscore submission process.
   document.getElementById("submitBtn").addEventListener("click",function(event) {
     event.preventDefault();
@@ -117,7 +119,6 @@
       alert("error", "Cannot be blank!");
     } else { 
 
-  
       //set new submission
       localStorage.setItem("user", JSON.stringify(user));
 
